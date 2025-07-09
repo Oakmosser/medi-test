@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": 
+    [
+        {
+        "name": "dotnet build and run",
+        "type": "dotnet",
+        "preLaunchTask": "dotnet: build",
+        "request": "launch",
+        "projectPath": "${workspaceFolder}/medi-backend/medi-backend.csproj",
+        }
+    ]
+}
