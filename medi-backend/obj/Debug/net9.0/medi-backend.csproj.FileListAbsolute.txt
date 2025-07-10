@@ -39,3 +39,4 @@ C:\Users\bosto\Desktop\Projects\take-home-test\medi-backend\obj\Debug\net9.0\ref
 C:\Users\bosto\Desktop\Projects\take-home-test\medi-backend\obj\Debug\net9.0\medi-backend.pdb
 C:\Users\bosto\Desktop\Projects\take-home-test\medi-backend\obj\Debug\net9.0\medi-backend.genruntimeconfig.cache
 C:\Users\bosto\Desktop\Projects\take-home-test\medi-backend\obj\Debug\net9.0\ref\medi-backend.dll
+C:\Users\bosto\Desktop\Projects\take-home-test\medi-backend\obj\Debug\net9.0\medi-backend.sourcelink.json

@@ -2,7 +2,7 @@
 import logo from '/logo.svg'
 import './App.css'
 import { useState } from 'react';
-import { TableRow } from './components/table-row';
+import { Table } from './components/table/table';
 
 function App() {
 
@@ -45,7 +45,7 @@ function App() {
       {currentView == "home" && 
         (
           <>
-            <div class="flex items-center">
+            <div className="flex items-center">
               <a className='m-auto' href="https://singular.health/" target="_blank">
                 <img src={logo} className="logo" alt="Singular logo" />
               </a>
@@ -61,42 +61,12 @@ function App() {
       }
       {currentView == "scans" && 
         (
-          <>
-            <table>
-              <thead>
-                <tr>
-                  <th>Id</th>
-                  <th>Date Created</th>
-                  <th>Patient</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {
-                  currentScans.map(scan => <TableRow scan={scan} updateMethods={{updateNotes}} />)
-                }
-              </tbody>
-            </table>
-          </>
+          <Table data={currentScans} updateMethods={{fetchNotesTable, updateView}} currentView={currentView}></Table>
         )
       }
       {currentView == "notes" && 
         (
-          <>
-            <table>
-              <thead>
-                <th>Id</th>
-                <th>Date Created</th>
-                <th>Title</th>
-                <th>Content</th>
-              </thead>
-              <tbody>
-                {
-                  currentNotes.map(note => <TableRow note={note}/>)
-                }
-              </tbody>
-            </table>
-          </>
+          <Table data={currentNotes} updateMethods={{updateNotes, updateView}} currentView={currentView}></Table>
         )
       }
       
