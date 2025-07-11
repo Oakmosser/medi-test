@@ -4,10 +4,8 @@
 
 namespace Models
 {
-    public class Scan
+    public class Scan : BaseObject
     {
-        public required Guid Id { get; set; }
-        public required DateTime DateCreated { get; set; }
         public string Patient { get; set; }
         public required List<Note> Notes { get; set; }
     }

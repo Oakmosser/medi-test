@@ -15,14 +15,13 @@ public class SeedData
         _db.SaveChanges();
     }
 
+    //Some data to test with
     private IEnumerable<Scan> CreateScans()
     {
         for (int i = 0; i <= 15; i++)
         {
             yield return new Scan()
             {
-                Id = Guid.NewGuid(),
-                DateCreated = DateTime.Now,
                 Notes = new List<Note>(),
                 Patient = $"Boston George - {i}"
             };

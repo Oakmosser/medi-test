@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("medi-backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7429bd019111f6eee49d55a5b8f096700ca0ba3a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c62772eea5715559f2e3fd103b51e696ee9a023")]
 [assembly: System.Reflection.AssemblyProductAttribute("medi-backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("medi-backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

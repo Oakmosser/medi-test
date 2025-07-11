@@ -1,17 +1,21 @@
 /* eslint-disable no-unused-vars */
 import logo from '/logo.svg'
 import './App.css'
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Table } from './components/table/table';
+import { Button } from './components/button';
+import { EndpointContext } from './main';
 
 function App() {
 
-  const apiEndpoint = 'http://localhost:5148';
-
+  //Our views are carried in a string state variable which switches depending on the page we're looking at
+  const apiEndpoint = useContext(EndpointContext)
   const [currentScans, updateScans] = useState([])
   const [currentNotes, updateNotes] = useState([])
   const [currentView, updateView] = useState("home")
 
+  //Here we get our table fetching methods blocked out. In this case querying the endpoints, taking the JSON object and updating the state tracking the respective data with the newly grabbed values. These can then be used to update and hydrate the components that
+  //rely on thjm.
   const fetchScanTable = () => 
   {
     const data = fetch(`${apiEndpoint}/scans`, 
@@ -35,7 +39,7 @@ function App() {
       .then(data => data.json())
       .then(obj => 
         {
-          updateNotes(obj);
+          updateNotes({scanid: id, notes: obj});
           updateView("notes");    
         })
   }
@@ -52,9 +56,7 @@ function App() {
             </div>
             <h1>Singular Health Client Scan Portal</h1>
             <div className="card">
-              <button onClick={() => fetchScanTable()}>
-                Scans
-              </button>
+              <Button onClick={() => fetchScanTable()} buttonText={"Scans"} />
             </div>
           </>
         )
@@ -64,7 +66,7 @@ function App() {
           <Table data={currentScans} updateMethods={{fetchNotesTable, updateView}} currentView={currentView}></Table>
         )
       }
-      {currentView == "notes" && 
+      {currentNotes && currentView == "notes" && 
         (
           <Table data={currentNotes} updateMethods={{updateNotes, updateView}} currentView={currentView}></Table>
         )
